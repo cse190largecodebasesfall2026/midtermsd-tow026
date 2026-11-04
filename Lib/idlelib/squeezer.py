@@ -167,8 +167,13 @@ class ExpandingButton(tk.Button):
         self.squeezer.expandingbuttons.remove(self)
 
     def copy_first_line(self, event=None):
-        """Placeholder for copying the first line of squeezed output."""
-        pass
+        """Copy the first line of squeezed output to the clipboard."""
+        self.clipboard_clear()
+        if self.s:
+            first_line = self.s.splitlines()[0]
+        else:
+            first_line = ""
+        self.clipboard_append(first_line)
 
     def copy(self, event=None):
         """copy event handler
