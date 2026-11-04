@@ -166,6 +166,10 @@ class ExpandingButton(tk.Button):
         self.editwin.on_squeezed_expand(index, self.s, self.tags)
         self.squeezer.expandingbuttons.remove(self)
 
+    def copy_first_line(self, event=None):
+        """Placeholder for copying the first line of squeezed output."""
+        pass
+
     def copy(self, event=None):
         """copy event handler
 
@@ -185,6 +189,7 @@ class ExpandingButton(tk.Button):
     rmenu_specs = (
         # Item structure: (label, method_name).
         ('copy', 'copy'),
+        ('copy first line', 'copy_first_line'),
         ('view', 'view'),
     )
 
